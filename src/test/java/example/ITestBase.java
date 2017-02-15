@@ -12,7 +12,7 @@ import javax.ws.rs.core.UriBuilder;
 
 public class ITestBase {
     @ClassRule
-    public static final DropwizardAppRule<Configuration> APP = new DropwizardAppRule<>(Application.class, "target/classes/configuration.yaml");
+    public static final DropwizardAppRule<Configuration> APP = new DropwizardAppRule<>(Application.class, "target/test-classes/test-configuration.yaml");
 
     protected UriBuilder getUriBuilder(Class klass) {
         return new JerseyUriBuilder().scheme("http").host("localhost").port(APP.getLocalPort()).path(klass);
